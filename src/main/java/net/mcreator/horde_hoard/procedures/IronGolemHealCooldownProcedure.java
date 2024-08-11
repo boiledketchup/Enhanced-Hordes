@@ -31,8 +31,8 @@ public class IronGolemHealCooldownProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof IronGolem) {
-			if (entity instanceof LivingEntity _entity)
-				_entity.addEffect(new MobEffectInstance(HordeHoardModMobEffects.THINKING.get(), 160, 0, (false), (false)));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(HordeHoardModMobEffects.THINKING.get(), 160, 0, false, false));
 		}
 	}
 }

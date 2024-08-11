@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "piglin",
-    "zombified_piglin",
-    "piglin_brute"
+    "piglin_brute",
+    "zombified_piglin"
   ]
 }

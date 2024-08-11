@@ -1,17 +1,17 @@
 {
   "replace": false,
   "values": [
+    "minecraft:grass_block",
+    "minecraft:dirt_path",
+    "minecraft:dirt",
     "minecraft:coarse_dirt",
-    "minecraft:mossy_cobblestone",
+    "minecraft:podzol",
     "minecraft:rooted_dirt",
+    "minecraft:gravel",
     "minecraft:sand",
     "minecraft:red_sand",
-    "minecraft:packed_mud",
-    "minecraft:grass_block",
-    "minecraft:gravel",
-    "minecraft:dirt",
-    "minecraft:podzol",
+    "minecraft:mossy_cobblestone",
     "minecraft:mud",
-    "minecraft:dirt_path"
+    "minecraft:packed_mud"
   ]
 }

@@ -33,6 +33,8 @@ public class IronGolemAttackedProcedure {
 				if (Math.random() < 0.6) {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);
+					} else if (event != null && event.hasResult()) {
+						event.setResult(Event.Result.DENY);
 					}
 				}
 			}

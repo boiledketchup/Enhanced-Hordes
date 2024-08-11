@@ -1,22 +1,27 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[47,)"
 license="Academic Free License v3.0"
 
 [[mods]]
 modId="horde_hoard"
 version="1.1.0"
 displayName="Horde Hoard"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="nojus, MCreator"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
 
 [[dependencies.horde_hoard]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19.2]"
-    ordering="NONE"
+    versionRange="[1.20.1]"
+    ordering="AFTER"
     side="BOTH"
 
 
 
 
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

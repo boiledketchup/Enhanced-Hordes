@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 public class IronGolemTickProcedure {
 	@SubscribeEvent
 	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
-		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
+		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -46,19 +46,19 @@ public class IronGolemTickProcedure {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.LEVITATION);
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-				if (!(entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(MobEffects.REGENERATION) : false) && !(entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(HordeHoardModMobEffects.THINKING.get()) : false)
+				if (!(entity instanceof LivingEntity _livEnt9 && _livEnt9.hasEffect(MobEffects.REGENERATION)) && !(entity instanceof LivingEntity _livEnt10 && _livEnt10.hasEffect(HordeHoardModMobEffects.THINKING.get()))
 						&& !((world.getLevelData().getGameRules().getInt(HordeHoardModGameRules.IRONGOLEMREGENPOWER)) < 1)) {
-					if (entity instanceof LivingEntity _entity)
-						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, (int) ((world.getLevelData().getGameRules().getInt(HordeHoardModGameRules.IRONGOLEMREGENPOWER)) - 1), (false), (false)));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, (int) ((world.getLevelData().getGameRules().getInt(HordeHoardModGameRules.IRONGOLEMREGENPOWER)) - 1), false, false));
 					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) == (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1))) {
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles(ParticleTypes.HAPPY_VILLAGER, (x + 0.8), (y + 1), (z + 0.8), 1, 1, 1, 1, 0.2);
 					}
 				}
-			} else if (!(entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(MobEffects.MOVEMENT_SPEED) : false)) {
+			} else if (!(entity instanceof LivingEntity _livEnt17 && _livEnt17.hasEffect(MobEffects.MOVEMENT_SPEED))) {
 				if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof Villager) {
-					if (entity instanceof LivingEntity _entity)
-						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 1, (false), (false)));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 1, false, false));
 				}
 			}
 		}

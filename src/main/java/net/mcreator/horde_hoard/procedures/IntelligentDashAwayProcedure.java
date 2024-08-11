@@ -24,8 +24,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.horde_hoard.init.HordeHoardModMobEffects;
@@ -37,7 +37,7 @@ public class IntelligentDashAwayProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
@@ -48,17 +48,18 @@ public class IntelligentDashAwayProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams")))
-				&& entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams")))) {
+		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:intelligent_teams"))) && entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:intelligent_teams")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
+			} else if (event != null && event.hasResult()) {
+				event.setResult(Event.Result.DENY);
 			}
 		}
-		if (sourceentity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams")))) {
+		if (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("forge:intelligent_teams")))) {
 			if (!(sourceentity instanceof WitherSkeleton)) {
 				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack = new ItemStack(Items.BOW);
+						ItemStack _setstack = new ItemStack(Items.BOW).copy();
 						_setstack.setCount(1);
 						_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 						if (_entity instanceof Player _player)
@@ -66,7 +67,7 @@ public class IntelligentDashAwayProcedure {
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.crossbow.loading_end")), SoundSource.HOSTILE, (float) 0.5, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.crossbow.loading_end")), SoundSource.HOSTILE, (float) 0.5, 1);
 						} else {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.crossbow.loading_end")), SoundSource.HOSTILE, (float) 0.5, 1, false);
 						}
@@ -77,8 +78,8 @@ public class IntelligentDashAwayProcedure {
 							((sourceentity.getDeltaMovement().z() + Mth.nextDouble(RandomSource.create(), -0.5, 0.5)) * (-1) * 2)));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.CLOUD, (sourceentity.getX() + 0.5), (sourceentity.getY()), (sourceentity.getZ() + 0.5), 10, 0.5, 1, 0.5, 0.1);
-					if (sourceentity instanceof LivingEntity _entity)
-						_entity.addEffect(new MobEffectInstance(HordeHoardModMobEffects.THINKING.get(), 50, 1, (false), (false)));
+					if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(HordeHoardModMobEffects.THINKING.get(), 50, 1, false, false));
 				}
 			}
 		}

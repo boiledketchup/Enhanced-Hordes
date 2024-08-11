@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "stray",
-    "cave_spider",
     "spider",
+    "cave_spider",
     "skeleton",
+    "stray",
     "wither_skeleton"
   ]
 }

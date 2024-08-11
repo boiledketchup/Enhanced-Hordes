@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "drowned",
     "zombie",
-    "husk"
+    "husk",
+    "drowned"
   ]
 }

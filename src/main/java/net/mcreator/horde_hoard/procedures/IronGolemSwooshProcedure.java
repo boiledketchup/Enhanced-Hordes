@@ -13,11 +13,12 @@ import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.core.registries.Registries;
 
 import javax.annotation.Nullable;
 
-import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
@@ -26,7 +27,7 @@ public class IronGolemSwooshProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level, event.getSource().getEntity());
+			execute(event, event.getEntity().level(), event.getSource().getEntity());
 		}
 	}
 
@@ -40,11 +41,10 @@ public class IronGolemSwooshProcedure {
 		if (sourceentity instanceof IronGolem) {
 			{
 				final Vec3 _center = new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-						.collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if ((entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof IronGolem || (entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof Villager) {
-						entityiterator.hurt(DamageSource.GENERIC, 5);
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 5);
 						if (!(entityiterator instanceof Ravager)) {
 							entityiterator.setDeltaMovement(new Vec3(0, 0.5, 0));
 						}
