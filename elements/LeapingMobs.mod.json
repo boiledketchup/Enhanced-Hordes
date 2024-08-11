@@ -8,10 +8,10 @@
     "functions": [],
     "entities": [
       {
-        "value": "EntityCaveSpider"
+        "value": "EntitySpider"
       },
       {
-        "value": "EntitySpider"
+        "value": "EntityCaveSpider"
       },
       {
         "value": "EntitySkeleton"

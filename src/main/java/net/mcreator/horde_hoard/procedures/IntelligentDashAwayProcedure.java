@@ -18,6 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
@@ -30,8 +31,6 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.horde_hoard.init.HordeHoardModMobEffects;
 
 import javax.annotation.Nullable;
-
-import java.util.Random;
 
 @Mod.EventBusSubscriber
 public class IntelligentDashAwayProcedure {
@@ -74,8 +73,8 @@ public class IntelligentDashAwayProcedure {
 					}
 					if (sourceentity instanceof LivingEntity _entity)
 						_entity.swing(InteractionHand.MAIN_HAND, true);
-					sourceentity.setDeltaMovement(new Vec3(((sourceentity.getDeltaMovement().x() + Mth.nextDouble(new Random(), -0.5, 0.5)) * (-1) * 2), (sourceentity.getDeltaMovement().y() + 0.4),
-							((sourceentity.getDeltaMovement().z() + Mth.nextDouble(new Random(), -0.5, 0.5)) * (-1) * 2)));
+					sourceentity.setDeltaMovement(new Vec3(((sourceentity.getDeltaMovement().x() + Mth.nextDouble(RandomSource.create(), -0.5, 0.5)) * (-1) * 2), (sourceentity.getDeltaMovement().y() + 0.4),
+							((sourceentity.getDeltaMovement().z() + Mth.nextDouble(RandomSource.create(), -0.5, 0.5)) * (-1) * 2)));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.CLOUD, (sourceentity.getX() + 0.5), (sourceentity.getY()), (sourceentity.getZ() + 0.5), 10, 0.5, 1, 0.5, 0.1);
 					if (sourceentity instanceof LivingEntity _entity)

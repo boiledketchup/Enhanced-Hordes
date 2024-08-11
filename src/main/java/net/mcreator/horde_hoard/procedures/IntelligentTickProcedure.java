@@ -42,8 +42,8 @@ import java.util.Comparator;
 @Mod.EventBusSubscriber
 public class IntelligentTickProcedure {
 	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingUpdateEvent event) {
-		execute(event, event.getEntityLiving().level, event.getEntityLiving().getX(), event.getEntityLiving().getY(), event.getEntityLiving().getZ(), event.getEntityLiving());
+	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
+		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -65,7 +65,8 @@ public class IntelligentTickProcedure {
 										.collect(Collectors.toList());
 								for (Entity entityiterator : _entfound) {
 									if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator
-											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams"))) && !(entity.getUUID().toString()).equals(entityiterator.getUUID().toString())) {
+											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams")))
+													&& !(entity.getX() + entity.getZ() == entityiterator.getX() + entityiterator.getZ())) {
 										doo = true;
 										break;
 									} else {
@@ -100,7 +101,8 @@ public class IntelligentTickProcedure {
 										.collect(Collectors.toList());
 								for (Entity entityiterator : _entfound) {
 									if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator
-											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams"))) && !(entity.getUUID().toString()).equals(entityiterator.getUUID().toString())) {
+											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_teams")))
+													&& !(entity.getX() + entity.getZ() == entityiterator.getX() + entityiterator.getZ())) {
 										doo = false;
 										break;
 									} else {
@@ -136,7 +138,7 @@ public class IntelligentTickProcedure {
 								for (Entity entityiterator : _entfound) {
 									if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator
 											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_piglin")))
-													&& !(entity.getUUID().toString()).equals(entityiterator.getUUID().toString())) {
+													&& !(entity.getX() + entity.getZ() == entityiterator.getX() + entityiterator.getZ())) {
 										doo = true;
 										break;
 									} else {
@@ -172,7 +174,7 @@ public class IntelligentTickProcedure {
 								for (Entity entityiterator : _entfound) {
 									if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entityiterator
 											|| entityiterator.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:intelligent_piglin")))
-													&& !(entity.getUUID().toString()).equals(entityiterator.getUUID().toString())) {
+													&& !(entity.getX() + entity.getZ() == entityiterator.getX() + entityiterator.getZ())) {
 										doo = false;
 										break;
 									} else {

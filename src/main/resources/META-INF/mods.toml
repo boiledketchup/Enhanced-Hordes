@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[43,)"
 license="Academic Free License v3.0"
 
 [[mods]]
 modId="horde_hoard"
-version="1.0.0"
+version="1.1.0"
 displayName="Horde Hoard"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
@@ -13,7 +13,7 @@ authors="nojus, MCreator"
 [[dependencies.horde_hoard]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2]"
+    versionRange="[1.19.2]"
     ordering="NONE"
     side="BOTH"
 

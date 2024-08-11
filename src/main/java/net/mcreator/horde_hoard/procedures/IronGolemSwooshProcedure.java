@@ -46,7 +46,7 @@ public class IronGolemSwooshProcedure {
 					if ((entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof IronGolem || (entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof Villager) {
 						entityiterator.hurt(DamageSource.GENERIC, 5);
 						if (!(entityiterator instanceof Ravager)) {
-							entityiterator.setDeltaMovement(new Vec3(0, 1, 0));
+							entityiterator.setDeltaMovement(new Vec3(0, 0.5, 0));
 						}
 					}
 				}

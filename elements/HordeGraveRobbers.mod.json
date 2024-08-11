@@ -3,15 +3,25 @@
   "_type": "tag",
   "definition": {
     "type": "Entities",
-    "items": [],
+    "items": [
+      {
+        "value": "Items.SPAWN_EGG#54"
+      },
+      {
+        "value": "Items.DROWNED_SPAWN_EGG"
+      },
+      {
+        "value": "Items.HUSK_SPAWN_EGG"
+      }
+    ],
     "blocks": [],
     "functions": [],
     "entities": [
       {
-        "value": "EntityHusk"
+        "value": "EntityZombie"
       },
       {
-        "value": "EntityZombie"
+        "value": "EntityHusk"
       },
       {
         "value": "EntityDrowned"

@@ -6,10 +6,12 @@
     "minecraft:rooted_dirt",
     "minecraft:sand",
     "minecraft:red_sand",
+    "minecraft:packed_mud",
     "minecraft:grass_block",
     "minecraft:gravel",
     "minecraft:dirt",
     "minecraft:podzol",
+    "minecraft:mud",
     "minecraft:dirt_path"
   ]
 }
