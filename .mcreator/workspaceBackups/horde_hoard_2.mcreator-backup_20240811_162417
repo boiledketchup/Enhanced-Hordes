@@ -1,0 +1,446 @@
+{
+  "mod_elements": [
+    {
+      "name": "HordeTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "horde_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/HordeTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HordeStopMultiplying",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "horde_stop_multiplying",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/HordeStopMultiplyingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TeamMaker",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "team_maker",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/TeamMakerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IntelligentSpawns",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "intelligent_spawns",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IntelligentSpawnsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Thinking",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thinking",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/potion/ThinkingMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "IntelligentTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "intelligent_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IntelligentTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IntelligentDashAway",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "intelligent_dash_away",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IntelligentDashAwayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IronGolemSwoosh",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_golem_swoosh",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IronGolemSwooshProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IronGolemTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_golem_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IronGolemTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IronGolemAttacked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_golem_attacked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IronGolemAttackedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HordeStacking",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hordeStacking",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      }
+    },
+    {
+      "name": "HordeMultiplying",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hordeMultiplying",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      }
+    },
+    {
+      "name": "IronGolemRegenPower",
+      "type": "gamerule",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ironGolemRegenPower",
+      "metadata": {
+        "files": [],
+        "type": "number"
+      }
+    },
+    {
+      "name": "IronGolemHealCooldown",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_golem_heal_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/IronGolemHealCooldownProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LeapTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leap_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/horde_hoard/procedures/LeapTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {
+    "ENTITIES:forge:hordes": [
+      "EntityZombie",
+      "EntityZombieVillager",
+      "EntityPigZombie",
+      "EntityHusk",
+      "EntityDrowned",
+      "EntitySlime"
+    ],
+    "ENTITIES:forge:intelligent_teams": [
+      "EntitySkeleton",
+      "EntityWitherSkeleton",
+      "EntityStray"
+    ],
+    "BLOCKS:forge:horde_breakable": [
+      "Blocks.MOSS_CARPET",
+      "Blocks.LEAVES#0",
+      "Blocks.LEAVES#1",
+      "Blocks.LEAVES#2",
+      "Blocks.LEAVES#3",
+      "Blocks.LEAVES2",
+      "Blocks.LEAVES2#0",
+      "Blocks.LEAVES2#1",
+      "Blocks.AZALEA_LEAVES",
+      "Blocks.FLOWERING_AZALEA_LEAVES",
+      "Blocks.WHEAT",
+      "Blocks.MELON_STEM",
+      "Blocks.ATTACHED_MELON_STEM",
+      "Blocks.PUMPKIN_STEM",
+      "Blocks.ATTACHED_PUMPKIN_STEM",
+      "Blocks.BEETROOTS",
+      "Blocks.CARROTS",
+      "Blocks.POTATOES",
+      "Blocks.TURTLE_EGG",
+      "Blocks.BAMBOO_SAPLING",
+      "Blocks.BAMBOO",
+      "Blocks.ICE",
+      "Blocks.FROSTED_ICE",
+      "Blocks.POINTED_DRIPSTONE"
+    ],
+    "BLOCKS:forge:hidden_zombie_blocks": [
+      "Blocks.GRASS",
+      "Blocks.GRASS_PATH",
+      "Blocks.DIRT#0",
+      "Blocks.DIRT#1",
+      "Blocks.DIRT#2",
+      "Blocks.ROOTED_DIRT",
+      "Blocks.GRAVEL",
+      "Blocks.SAND#0",
+      "Blocks.SAND#1",
+      "Blocks.MOSSY_COBBLESTONE",
+      "Blocks.MUD",
+      "Blocks.PACKED_MUD"
+    ],
+    "ENTITIES:forge:intelligent_piglin": [
+      "EntityPiglin",
+      "EntityPiglinBrute",
+      "EntityPigZombie"
+    ],
+    "ENTITIES:forge:horde_grave_robbers": [
+      "EntityZombie",
+      "EntityHusk",
+      "EntityDrowned"
+    ],
+    "ENTITIES:forge:leaping_mobs": [
+      "EntitySpider",
+      "EntityCaveSpider",
+      "EntitySkeleton",
+      "EntityStray",
+      "EntityWitherSkeleton"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "gamerule.ironGolemRegenPower.description": "The level of regeneration effect that Iron Golems recieve when there is no danger.",
+      "effect.horde_hoard.thinking": "Thinking",
+      "gamerule.hordeStacking.description": "Hordes crawl up one another",
+      "gamerule.hordeMultiplying": "Horde Multiplying",
+      "gamerule.hordeMultiplying.description": "Horde mobs will dig up more mobs",
+      "gamerule.hordeStacking": "Horde Stacking",
+      "gamerule.ironGolemRegenPower": "Iron Golem Regeneration Level"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "horde_hoard",
+    "modName": "Horde Hoard",
+    "version": "1.1.0",
+    "author": "nojus, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.horde_hoard"
+  },
+  "mcreatorVersion": 202400232117
+}
