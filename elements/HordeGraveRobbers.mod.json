@@ -1,0 +1,24 @@
+{
+  "_fv": 39,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityHusk"
+      },
+      {
+        "value": "EntityZombie"
+      },
+      {
+        "value": "EntityDrowned"
+      }
+    ],
+    "biomes": [],
+    "name": "horde_grave_robbers",
+    "namespace": "forge"
+  }
+}

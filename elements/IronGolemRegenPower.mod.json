@@ -1,0 +1,12 @@
+{
+  "_fv": 39,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Iron Golem Regeneration Level",
+    "description": "The level of regeneration effect that Iron Golems recieve when there is no danger.",
+    "category": "MOBS",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 4
+  }
+}

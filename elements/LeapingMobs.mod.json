@@ -1,0 +1,30 @@
+{
+  "_fv": 39,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityCaveSpider"
+      },
+      {
+        "value": "EntitySpider"
+      },
+      {
+        "value": "EntitySkeleton"
+      },
+      {
+        "value": "EntityStray"
+      },
+      {
+        "value": "EntityWitherSkeleton"
+      }
+    ],
+    "biomes": [],
+    "name": "leaping_mobs",
+    "namespace": "forge"
+  }
+}

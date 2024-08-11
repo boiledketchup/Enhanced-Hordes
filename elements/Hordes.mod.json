@@ -1,0 +1,33 @@
+{
+  "_fv": 39,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityZombie"
+      },
+      {
+        "value": "EntityZombieVillager"
+      },
+      {
+        "value": "EntityPigZombie"
+      },
+      {
+        "value": "EntityHusk"
+      },
+      {
+        "value": "EntityDrowned"
+      },
+      {
+        "value": "EntitySlime"
+      }
+    ],
+    "biomes": [],
+    "name": "hordes",
+    "namespace": "forge"
+  }
+}
